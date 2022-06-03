@@ -7,6 +7,7 @@ class Valid {
 
     public function passValidation($pass1,$pass2){
         if ($pass1!=$pass2){
+            
             return null;
         }
         return true;
