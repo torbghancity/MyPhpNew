@@ -1,7 +1,9 @@
 <?php
 
-require(__DIR__ ."/functions.php");
+require(__DIR__ ."/vendor/autoload.php");
 
+
+/*
 spl_autoload_register(function ($class_name) {
     
     $filepath = __DIR__ . DIRECTORY_SEPARATOR .$class_name .'.php';
@@ -12,4 +14,4 @@ spl_autoload_register(function ($class_name) {
       require ($filename);
 
     }
-});
+});*/

@@ -1,0 +1,13 @@
+{
+    "name": "mobilesignal/my-php-new",
+    "autoload": {
+        "psr-4": {
+            "Mobilesignal\\MyPhpNew\\": "src/",
+            "Services\\": "Services/"
+        },
+        "files": [
+            "functions.php"
+        ]
+    },
+    "require": {}
+}
