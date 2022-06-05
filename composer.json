@@ -10,6 +10,7 @@
         ]
     },
     "require": {
-        "phpoffice/phpspreadsheet": "^1.23"
+        "phpoffice/phpspreadsheet": "^1.23",
+        "jenssegers/blade": "^1.4"
     }
 }
