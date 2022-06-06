@@ -1,9 +1,12 @@
 <?php
 
+use Services\Layout\Layout;
+use Services\Models\TodoList;
+use Services\Models\User;
+
 require("../loader.php");
 
-use Services\Models\TodoList;
-use Services\Layout\Layout;
+$user = new User();
 
 $todoList = new TodoList;
 
@@ -14,7 +17,14 @@ if (isset($_POST["action"]) and in_array($_POST["action"], $validActions)) {
     redirect("/index.php");
 }
 
+//if (mysqli_num_rows($todoList) > 0) 
+$todolist = $todoList->getAll();
+Layout::render("index",["todo"=>$todolist]);
+
+
+/*
 Layout::pageHeader("صفحه اصلی");
+
 
 ?>
 <div class="container">
@@ -34,8 +44,8 @@ Layout::pageHeader("صفحه اصلی");
             <ul class="list-group">
 <?php
 
-$todoList = $todoList->getAll();
-if (mysqli_num_rows($todoList) > 0) {
+
+{
     while ($row = mysqli_fetch_assoc($todoList)) {
         $secondary = $row["done"] ? "list-group-item-secondary" : "";
         echo
@@ -56,12 +66,13 @@ if (mysqli_num_rows($todoList) > 0) {
     echo "<li class='list-group-item list-group-item-warning'>هیچ تسکی اضافه نشده است</li>";
 }
 
-?>
+
             </ul>
         </div>
     </div>
 </div>
-
+*/
+?>
 <script>
     let checkboxes = document.getElementsByClassName("doneCheckBox");
     for(let i=0;i<=checkboxes.length-1; i++){
