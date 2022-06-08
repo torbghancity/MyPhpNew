@@ -2,8 +2,6 @@
 
 require ("../loader.php");
 
-use Jenssegers\Blade\Blade;
+use Services\Layout\Layout;
 
-$blade = new Blade(__DIR__ . '/../views', 'cache');
-
-echo $blade->make('homepage', ['name' => 'John Doe'])->render();
+Layout::render('homepage',['name' => 'torbghancity'] );

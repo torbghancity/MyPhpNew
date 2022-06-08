@@ -1,1 +1,0 @@
-salam<?php /**PATH D:\MY\php\MyPhpNew\views/homepage.blade.php ENDPATH**/ ?>
