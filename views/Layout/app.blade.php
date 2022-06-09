@@ -52,7 +52,7 @@ use Services\Auth\Auth;
 
 
 <h1 class='h3'>پروژه تودولیست</h1>
-<h2 class='h4'>عنوان صفحه:</h2>
+<h2 class='h4'>عنوان صفحه:<span style="color:red"> @yield('pageTitle') </span></h2>
 
 
 
