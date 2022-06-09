@@ -34,23 +34,5 @@ if (isset($_POST["action"]) and $_POST["action"]=="register") {
         echo "رمز عبور و تکرارش  برابر نیسست...!";
     }
 }
-Layout::pageHeader("ایجاد حساب");
-?>
 
-<form action="/register.php" method="post">
-    <input type="hidden" name="action" value="register">
-    
-    نام: <input type="text" name="name" >
-    <br>
-    <br>
-    نام کاربری: <input type="text" name="username" >
-    <br>
-    <br>
-    رمز عبور: <input type="password" name="password">
-    <br>
-    <br>
-    تگرار رمز عبور: <input type="password" name="password_repeat">
-    <br>
-    <br>
-    <button>ایجاد حساب</button>
-</form>
+Layout::render('register');

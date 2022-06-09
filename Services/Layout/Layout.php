@@ -6,7 +6,7 @@ use Jenssegers\Blade\Blade;
 class Layout
 {
 
-    public static function render($name,$parameters)
+    public static function render($name,$parameters=[])
     {
         
         $blade = new Blade(__DIR__ . '/../../views',__DIR__ . '/../../cache');
