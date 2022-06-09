@@ -1,5 +1,7 @@
 @extends("Layout.app")
 
+@section('pageTitle', 'تماس با ما')
+
 @section('content')
 
 <form action="/contact.php" method="post">

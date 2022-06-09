@@ -1,5 +1,7 @@
 @extends("Layout.app")
 
+@section('pageTitle', 'ورود')
+
 @section('content')
 
 <form action="/login.php" method="post">

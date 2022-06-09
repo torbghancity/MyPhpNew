@@ -1,5 +1,7 @@
 @extends("Layout.app")
 
+@section('pageTitle', 'صفحه اصلی')
+
 @section('content')
 
 <div class="container">

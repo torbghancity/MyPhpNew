@@ -1,5 +1,7 @@
 @extends("Layout.app")
 
+@section('pageTitle', 'ایجاد حساب')
+
 @section('content')
 
 <form action="/register.php" method="post">
