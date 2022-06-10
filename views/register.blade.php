@@ -4,7 +4,7 @@
 
 @section('content')
 
-<form action="/register.php" method="post">
+<form action="/register" method="post">
     <input type="hidden" name="action" value="register">
     
     نام: <input type="text" name="name" >

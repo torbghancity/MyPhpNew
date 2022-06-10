@@ -10,7 +10,7 @@ $message = new Message;
 if(isset($_POST["action"]) and $_POST["action"]=="insert" )
 {
     $message->insert();
-    redirect("/contact.php");
+    redirect("/contact");
 }
 $messages = $message->getAll();
 

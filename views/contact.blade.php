@@ -4,7 +4,7 @@
 
 @section('content')
 
-<form action="/contact.php" method="post">
+<form action="/contact" method="post">
         <input type="hidden" name="action" value="insert">
         <textarea name="text" id="text" cols="30" rows="10"></textarea>
         <br>

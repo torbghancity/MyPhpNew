@@ -20,10 +20,10 @@ use Services\Auth\Auth;
         <a class="nav-link" href="/">صفحه اصلی</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/about.php">درباره ما</a>
+        <a class="nav-link" href="/about">درباره ما</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/contact.php">تماس با ما</a>
+        <a class="nav-link" href="/contact">تماس با ما</a>
     </li>
     @php
     
@@ -33,17 +33,17 @@ use Services\Auth\Auth;
       {{$userData["username"]}}
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/logout.php">خروج</a>
+        <a class="nav-link" href="/logout">خروج</a>
     </li>
     @php
         } else {
             @endphp
             
     <li class="nav-item">
-        <a class="nav-link" href="/login.php">ورود</a>
+        <a class="nav-link" href="/login">ورود</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/register.php">ایجاد حساب</a>
+        <a class="nav-link" href="/register">ایجاد حساب</a>
     </li>
     @php
         }

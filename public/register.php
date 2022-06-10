@@ -20,7 +20,7 @@ if (isset($_POST["action"]) and $_POST["action"]=="register") {
         if(!$uservalid){
             $userData = $user->create($name,$username, $password);
             if($userData){
-                redirect("/login.php");
+                redirect("/login");
             }
             else{
                 echo "No .. ";

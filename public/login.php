@@ -14,7 +14,7 @@ if (isset($_POST["action"]) and $_POST["action"]=="login") {
     $userData = $user->check($username, $password);
     if($userData){
         $token = Auth::login($userData["id"]);
-        redirect("/index.php");
+        redirect("/");
     }
     else{
         echo "No .. ";

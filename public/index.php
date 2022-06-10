@@ -1,23 +1,15 @@
 <?php
 
-require("../loader.php");
+$route = $_SERVER["REQUEST_URI"];
 
-use Services\Models\TodoList;
-use Services\Layout\Layout;
-
+$routes = require ("../routes/routes.php");
 
 
-$todoList = new TodoList;
-
-$validActions = ['done','delete','insert'];
-if (isset($_POST["action"]) and in_array($_POST["action"], $validActions)) {
-    $action = $_POST["action"];
-    $todoList->$action();
-    redirect("/index.php");
+if (isset($routes[$route])){
+    require ($routes[$route]);
+    exit;
 }
 
-
-$todoList = $todoList->getAll();
-//if (mysqli_num_rows($todoList) > 0)
-
-Layout::render('index',['todo' => $todoList]);
+http_response_code(404);
+require("404.php");
+exit;

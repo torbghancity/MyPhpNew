@@ -4,7 +4,7 @@
 
 @section('content')
 
-<form action="/login.php" method="post">
+<form action="/login" method="post">
     <input type="hidden" name="action" value="login">
     
     نام کاربری: <input type="text" name="username" >
