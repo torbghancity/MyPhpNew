@@ -3,7 +3,7 @@
     "autoload": {
         "psr-4": {
             "Mobilesignal\\MyPhpNew\\": "src/",
-            "Services\\": "Services/"
+            "Services\\": "app/"
         },
         "files": [
             "functions.php"

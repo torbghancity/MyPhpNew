@@ -1,6 +1,6 @@
 @extends("Layout.app")
 
-@section('pageTitle', 'ورود')
+@section('Title', 'ورود')
 
 @section('content')
 

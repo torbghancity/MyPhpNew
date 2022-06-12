@@ -1,8 +1,8 @@
-@extends("Layout.app")
 
-@section('Title', 'صفحه اصلی')
 
-@section('content')
+<?php $__env->startSection('Title', 'صفحه اصلی'); ?>
+
+<?php $__env->startSection('content'); ?>
 
 <div class="container">
     <div class="row">
@@ -19,23 +19,24 @@
     <div class="row">
         <div class="col-md-6">
             <ul class="list-group">
-                @while ($row = mysqli_fetch_assoc($todo))
-                    @php
+                <?php while($row = mysqli_fetch_assoc($todo)): ?>
+                    <?php
                         $secondary = $row["done"] ? "list-group-item-secondary" : ""; 
-                    @endphp
-                    <li class='list-group-item ".{{$secondary}}."'> {{$row['title']}}
+                    ?>
+                    <li class='list-group-item ".<?php echo e($secondary); ?>."'> <?php echo e($row['title']); ?>
+
                         <form method='post' action='/' >
                             <button name='action' value='delete'>DEL</button>
                             
-                            <input type='hidden' name='id' value='{{$row["id"]}}' />
+                            <input type='hidden' name='id' value='<?php echo e($row["id"]); ?>' />
                         </form>    
                         <form action='/' method='post'>
                             <input type='hidden' name='action' value='done' />
-                            <input type='hidden' name='id' value='{{$row["id"]}}' />
-                            <input type='checkbox' value='done' name='done' class='doneCheckBox' ".{{($row["done"] ? "checked" : "")}}." />
+                            <input type='hidden' name='id' value='<?php echo e($row["id"]); ?>' />
+                            <input type='checkbox' value='done' name='done' class='doneCheckBox' ".<?php echo e(($row["done"] ? "checked" : "")); ?>." />
                         </form>
                     </li>
-                @endwhile
+                <?php endwhile; ?>
             </ul>
         </div>
     </div>
@@ -51,4 +52,6 @@
 
 </script>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make("Layout.app", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\html.project\PHP\MyPhpNew\views/index.blade.php ENDPATH**/ ?>

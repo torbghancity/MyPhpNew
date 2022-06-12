@@ -1,8 +1,8 @@
-@extends("Layout.app")
 
-@section('Title', 'ایجاد حساب')
 
-@section('content')
+<?php $__env->startSection('Title', 'ایجاد حساب'); ?>
+
+<?php $__env->startSection('content'); ?>
 
 <form action="/register" method="post">
     <input type="hidden" name="action" value="register">
@@ -22,4 +22,5 @@
     <button>ایجاد حساب</button>
 </form>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make("Layout.app", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\html.project\PHP\MyPhpNew\views/register.blade.php ENDPATH**/ ?>

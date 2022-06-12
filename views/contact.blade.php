@@ -1,6 +1,6 @@
 @extends("Layout.app")
 
-@section('pageTitle', 'تماس با ما')
+@section('Title', 'تماس با ما')
 
 @section('content')
 
