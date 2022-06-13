@@ -1,12 +1,24 @@
 <?php
 
+require("../vendor/autoload.php");
+
+use Services\Controllers\TestControllers;
+
 $route = $_SERVER["REQUEST_URI"];
 
 $routes = require ("../routes/routes.php");
 
 
 if (isset($routes[$route])){
-    require ($routes[$route]);
+
+    $act = $routes[$route];
+    $act=explode("@",$act);
+
+    $controllerName = "\\Services\\Controllers\\$act[0]";
+    $action = $act[1];
+    
+    $controller = new $controllerName;
+    $controller->$action();
     exit;
 }
 
