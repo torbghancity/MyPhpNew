@@ -5,9 +5,12 @@ return [
     "/" => "HomeControllers@home",
     "/storenewtodoItem" => "HomeControllers@store",
     "/deltodoItem" => "HomeControllers@delete",
-   /* "/about" => "about.php",
-    "/contact" => "contact.php",
-    "/login" => "login.php",
-    "/logout" => "logout.php",
-    "/register" => "register.php",*/
+    "/loginhome" => "LoginControllers@home",
+    "/userlogin" => "LoginControllers@login",
+    "/registerhome" => "RegisterControllers@home",
+    "/userregister" => "RegisterControllers@register",
+    "/userlogout" => "LogoutControllers@logout",
+    "/contact" => "ContactControllers@home",
+    "/messagesinsert" => "ContactControllers@insert",
+    "/about" => "AboutControllers@home",
 ];

@@ -2,8 +2,6 @@
 
 require("../vendor/autoload.php");
 
-use Services\Controllers\TestControllers;
-
 $route = $_SERVER["REQUEST_URI"];
 
 $routes = require ("../routes/routes.php");
