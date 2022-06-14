@@ -30,7 +30,7 @@ use Services\Auth\Auth;
         if ($userData = Auth::user()) {
             @endphp
     <li class="nav-item">
-      {{$userData["username"]}}
+      {{$userData["name"]}}
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/userlogout">خروج</a>

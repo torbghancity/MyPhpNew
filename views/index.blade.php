@@ -29,7 +29,7 @@
                             
                             <input type='hidden' name='id' value='{{$row["id"]}}' />
                         </form>    
-                        <form action='/storenewtodoItem' method='post'>
+                        <form action='/donetodoItem' method='post'>
                             <input type='hidden' name='action' value='done' />
                             <input type='hidden' name='id' value='{{$row["id"]}}' />
                             <input type='checkbox' value='done' name='done' class='doneCheckBox' ".{{($row["done"] ? "checked" : "")}}." />
