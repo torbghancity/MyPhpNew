@@ -6,9 +6,9 @@ use Services\Layout\Layout;
 
 
 
-class AboutControllers {
+class PublicControllers {
 
-    public function home(){
+    public function about(){
         Layout::render('about');
     }
 

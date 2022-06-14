@@ -3,18 +3,47 @@
 namespace services\Controllers;
 
 use Services\Models\User;
-use Services\Validation\valid;
+use Services\Auth\Auth;
 use Services\Layout\Layout;
+use Services\Validation\valid;
 
-class RegisterControllers {
+class AuthControllers {
 
-    public function home(){
+    public function login(){
+
+        Layout::render('login');
+
+    }
+
+    public function dologin(){
+
+        $user = new User;
+
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+        $userData = $user->check($username, $password);
+        if($userData){
+            $token = Auth::login($userData["id"]);
+            redirect("/");
+        }
+        else{
+            echo "No .. ";
+        }
+
+    }
+
+    public function logout(){
+        Auth::logout();
+        redirect("/");
+    }
+
+    public function register(){
 
         Layout::render('register');
 
     }
 
-    public function register(){
+    public function doregister(){
 
         $user = new User;
         $valid = new Valid;
