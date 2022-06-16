@@ -11,7 +11,7 @@ class AuthControllers {
 
     public function login(){
 
-        Layout::render('login');
+        Layout::render('Auth.login',['errormessages' => '']);
 
     }
 
@@ -27,7 +27,7 @@ class AuthControllers {
             redirect("/");
         }
         else{
-            echo "No .. ";
+            Layout::render('Auth.login',['errormessages' => 'کاربر یافت نشد']);
         }
 
     }
@@ -39,7 +39,7 @@ class AuthControllers {
 
     public function register(){
 
-        Layout::render('register');
+        Layout::render('Auth.register',['errormessages' => '']);
 
     }
 
@@ -48,30 +48,40 @@ class AuthControllers {
         $user = new User;
         $valid = new Valid;
 
-        $name = $_POST["name"];
-        $username = $_POST["username"];
-        $password = $_POST["password"];
+        $user->name = $_POST["name"];
+        $user->username = $_POST["username"];
+        $user->password = $_POST["password"];
         $password_repeat=$_POST["password_repeat"];
-        $passvalid= $valid->passValidation($password,$password_repeat);
-
-        if ($passvalid){
-            $uservalid=$valid->userValidation($username);
-            if(!$uservalid){
-                $userData = $user->create($name,$username, $password);
-                if($userData){
-                    redirect("/loginhome");
-                }
-                else{
-                    echo "No .. ";
-                }
-            }
-            else{
-                echo "نام کاربری قبلا استفاده شده...!";
-            }
+        
+        $Validation= $valid->Validation($user->name,$user->username,$user->password,$password_repeat);
+        
+        if ($Validation==''){
+            $userData = $user->create();
+            Layout::render('Auth.login',['errormessages' => '']);
         }
         else{
-            echo "رمز عبور و تکرارش  برابر نیسست...!";
+            Layout::render('Auth.register',['errormessages' => $Validation]);
         }
+    }
+
+    public function checkvalid(){
+        $fullurl = "htttp://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+        if (strpos($fullurl,"singup=empty")){
+            $errormessages = "تمام خانه ها باید پر شود";
+            
+        }
+
+        if (strpos($fullurl,"singup=notmatch")){
+            $errormessages = "پسورد و تکرار آن باهم یکسان نیست";
+        }
+
+        if (strpos($fullurl,"singup=onuser")){
+            $errormessages = "نام کاربری قبلا استفاده شده است";
+        }
+
+        Layout::render('Auth.register',["errormessages" => $errormessages]);
+
     }
 
 }

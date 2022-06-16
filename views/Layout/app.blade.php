@@ -33,17 +33,17 @@ use Services\Auth\Auth;
       {{$userData["name"]}}
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/userlogout">خروج</a>
+        <a class="nav-link" href="/logout">خروج</a>
     </li>
     @php
         } else {
             @endphp
             
     <li class="nav-item">
-        <a class="nav-link" href="/loginhome">ورود</a>
+        <a class="nav-link" href="/login">ورود</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/registerhome">ایجاد حساب</a>
+        <a class="nav-link" href="/register">ایجاد حساب</a>
     </li>
     @php
         }

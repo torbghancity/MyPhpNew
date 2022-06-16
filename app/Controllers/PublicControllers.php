@@ -9,7 +9,7 @@ use Services\Layout\Layout;
 class PublicControllers {
 
     public function about(){
-        Layout::render('about');
+        Layout::render('Pages.about');
     }
 
 }

@@ -4,7 +4,7 @@
 
 @section('content')
 
-<form action="/userregister" method="post">
+<form action="/doregister" method="post">
     <input type="hidden" name="action" value="register">
     
     نام: <input type="text" name="name" >
@@ -21,5 +21,6 @@
     <br>
     <button>ایجاد حساب</button>
 </form>
+<alart class="alart-danger">{{$errormessages}}</alart>
 
 @endsection

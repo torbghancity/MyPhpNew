@@ -9,9 +9,13 @@ class User extends BaseModel
     public $password = "";
     public $remember_token = "";
 
-    public function create($name,$username,$password)
+    public function create()
     {
         // TODO: Validation
+
+        $name=htmlspecialchars($this->name);
+        $username=htmlspecialchars($this->username);
+        $password=htmlspecialchars($this->password);
         $sql =
             "INSERT INTO `users` (`name`, `username`, `password`) "
             ."VALUES ('$name','$username','$password');";
@@ -22,8 +26,11 @@ class User extends BaseModel
 
     public function check($username, $password)
     {
+        $user=htmlspecialchars($username);
+        $pass=htmlspecialchars($password);
+
         $sql =
-            "SELECT * FROM `users` where `username`='$username' and `password`='$password' limit 0,1;";
+            "SELECT * FROM `users` where `username`='$user' and `password`='$pass' limit 0,1;";
         $result = mysqli_query($this->dbCon, $sql);
         return mysqli_fetch_assoc($result);
     }
@@ -45,8 +52,9 @@ class User extends BaseModel
 
     public function getUserByusername ($username)
     {
+        $user=htmlspecialchars($username);
         $sql =
-            "SELECT * FROM `users` where `username`='$username';";
+            "SELECT * FROM `users` where `username`='$user';";
         $result = mysqli_query($this->dbCon, $sql);
         return mysqli_fetch_assoc($result);
     }

@@ -10,7 +10,7 @@ class ContactControllers {
     public function home(){
         $message = new Message;
         $messages = $message->getAll();
-        Layout::render( 'contact' , ['messages' => $messages] );
+        Layout::render( 'Pages.contact' , ['messages' => $messages] );
         
     }
 
